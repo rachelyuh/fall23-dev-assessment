@@ -1,17 +1,14 @@
 import axios from 'axios'
 
 
-export default function handler(req, res) {
-    let url = "http://localhost:5000/api/bog/users"
-    axios.get(url)
-        .then(function (response) {
-            info = response.data
-            res.status(200).send(info);
-    
-        })
-        .catch(function (error) {
-            res.status(400).send("Error in request");
-        })
+
+export const fetchUsers = async () => {
+    try {
+      const response = await axios.get(`http://localhost:3001/api/bog/users`);
+      return response.data;
+    } catch (error) {
+      throw new Error('Error fetching users data.');
+    }
+  };
     
     
-}

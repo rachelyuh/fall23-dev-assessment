@@ -1,6 +1,8 @@
 {
   "dependencies": {
-    "concurrently": "^8.2.0"
+    "axios": "^1.5.0",
+    "concurrently": "^8.2.0",
+    "swr": "^2.2.2"
   },
   "scripts": {
     "postinstall": "concurrently yarn:postinstall:*",
